@@ -1,0 +1,64 @@
+# Start from the existing image
+FROM ghcr.io/arun-art06/odoo-17.1:1.5 
+
+COPY ./addons/muk_web_appsbar /mnt/extra-addons/muk_web_appsbar  
+COPY ./addons/muk_web_chatter /mnt/extra-addons/muk_web_chatter
+COPY ./addons/muk_web_colors /mnt/extra-addons/muk_web_colors
+COPY ./addons/muk_web_dialog /mnt/extra-addons/muk_web_dialog
+COPY ./addons/muk_web_theme /mnt/extra-addons/muk_web_theme
+COPY ./addons/rest_api /mnt/extra-addons/rest_api
+COPY ./addons/eg_asset_management /mnt/extra-addons/eg_asset_management
+COPY ./addons/auto_database_backup /mnt/extra-addons/auto_database_backup
+COPY ./addons/odoo_database_restore_manager /mnt/extra-addons/odoo_database_restore_manager
+COPY ./addons/geolocation_map_widget /mnt/extra-addons/geolocation_map_widget
+COPY ./addons/eg_asset_signup /mnt/extra-addons/eg_asset_signup
+
+
+#cd C:\odoo\odoo17
+# docker build --no-cache -f dockerfile_erp_smartlifefoundation -t ghcr.io/arun-art06/odoo-17-erp-smartlifefoundation:1.54 .
+# docker build -f Docker -t ghcr.io/arun-art06/odoo-17-erp-smartlifefoundation:1.76 .
+# docker push ghcr.io/arun-art06/odoo-17-erp-smartlifefoundation:1.76
+
+# ssh root@194.163.184.76 -p 1025
+# 2t8AlUku9dvfhgsu378ehdj839deh
+
+#----Live
+#$sudo docker ps  
+# 05f7a0c830be  - postgres ip
+#$ docker inspect 05f7a0c830be| grep "IPAddress"
+
+#$ 05f7a0c830be
+
+
+#odoo    -p 8077    --db_host=10.0.1.107  --db_user=dbadmin --db_password='Ijnhsmkklnasi23asknca34' --database erp.smartlifefoundation.org  --update eg_asset_management  
+#$ sudo docker exec -it --user root  odoo17-odoo17-1 /bin/bash
+#$ odoo    -p 8077    --db_host=10.0.1.140  --db_user=dbadmin --db_password='Ijnhsmkklnasi23asknca34' --database erp.smartlifefoundation.org  --update eg_asset_management  
+#$ odoo    -p 8077    --db_host=10.0.1.19  --db_user=dbadmin --db_password='Ijnhsmkklnasi23asknca34' --database erp.smartlifefoundation.org  --update rest_api
+# odoo    -p 8077    --db_host=10.0.1.29  --db_user=dbadmin --db_password='Ijnhsmkklnasi23asknca34' --database erp.smartlifefoundation.org  --update muk_web_theme 
+#https://developers.facebook.com/apps/1138186564177955/whatsapp-business/wa-dev-console/?business_id=363917178485122
+
+#$ sudo docker exec -it --user root  erpsmartlifefoundation-app-14bw8d.1.29uavgxbsqvmirifqt1wyseh7 /bin/bash
+#  sudo chmod 777 -R /var/lib/odoo
+
+
+#----Local
+# docker ps  
+#89ccc815ccd5  - postgres ip
+# docker inspect 89ccc815ccd5 | find "IPAddress"
+
+# c897ad241d96
+#docker compose run --rm odoo17 odoo -d erp.smartlifefoundation.org -u eg_asset_management,rest_api --stop-after-init
+# sudo docker exec -it --user root  odoo17-odoo17-1 /bin/bash
+# odoo    -p 8077    --db_host=172.20.0.2 --db_user=odoo --db_password='odoo' --database erp.smartlifefoundation.org  --update eg_asset_management  
+# odoo    -p 8077    --db_host=10.0.1.19 --db_user=odoo --db_password='odoo' --database erp.smartlifefoundation.org  --update rest_api  
+# odoo    -p 8077    --db_host=172.20.0.2  --db_user=odoo --db_password='odoo' --database erp.smartlifefoundation.org  --update eg_asset_signup  
+# odoo    -p 8077    --db_host=172.18.0.2  --db_user=odoo --db_password='odoo' --database erp.smartlifefoundation.org  --update muk_web_theme  
+
+# odoo   shell  -p 8077    --db_host=172.18.0.2  --db_user=postgresadmin --db_password='Ftjskiasals3w909sjaosds' --database erp.smartlifefoundation.org  
+
+
+#https://developers.facebook.com/apps/1138186564177955/whatsapp-business/wa-dev-console/?business_id=363917178485122
+
+# https://erp.smartlifefoundation.org/
+# campadmin1@smartlifefoundation.org
+# Pass123$

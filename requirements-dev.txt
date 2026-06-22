@@ -1,0 +1,67 @@
+# Development and Additional Dependencies for SmartLife ERP
+# =======================================================
+# This file contains additional packages installed during development
+# that are not part of the core Odoo requirements.txt
+
+# Base requirements (inherit from main requirements.txt)
+-r requirements.txt
+
+# Additional packages for development and custom modules
+# =====================================================
+
+# GeoIP functionality (for website geolocation)
+geoip2==5.1.0
+
+# Standards number validation (for partner autocomplete)
+python-stdnum==2.1
+
+# SOAP client library (for EDI and external integrations)
+zeep==4.3.2
+
+# Fast JSON encoder/decoder (for REST API modules)
+simplejson==3.20.1
+
+# Excel file writing (for REST API and reporting modules)
+xlsxwriter==3.2.9
+
+# Elasticsearch client (for REST API search functionality)
+elasticsearch==9.1.1
+
+# SCSS/Sass compilation (for web assets)
+# Note: sass is typically installed via npm, but python alternatives:
+# libsass>=0.20.1  # Already in main requirements.txt
+
+# Development tools (optional)
+# ============================
+
+# Code formatting and linting
+# black>=22.0.0
+# flake8>=4.0.0
+# pylint>=2.12.0
+
+# Testing frameworks
+# pytest>=6.2.0
+# pytest-cov>=3.0.0
+
+# Documentation
+# sphinx>=4.0.0
+# sphinx-rtd-theme>=1.0.0
+
+# Database tools
+# psycopg2-binary>=2.9.0  # Alternative to psycopg2 for development
+
+# Installation Notes:
+# ==================
+# 1. Install with: pip install -r requirements-dev.txt
+# 2. This will automatically install base requirements.txt first
+# 3. Additional packages were added to resolve module dependencies:
+#    - geoip2: Required by website module
+#    - python-stdnum: Required by partner_autocomplete module
+#    - zeep: Required by account_edi_ubl_cii module
+#    - simplejson: Required by rest_api module
+#    - xlsxwriter: Required by rest_api module (survey functionality)
+#    - elasticsearch: Required by rest_api module (search functionality)
+
+# Version History:
+# ===============
+# 2025-09-23: Initial creation with packages added during development
