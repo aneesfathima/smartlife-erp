@@ -1,12 +1,12 @@
 @echo off
 setlocal enabledelayedexpansion
 
-REM Get port from command line argument, default to 8089 if not provided
+REM Get port from command line argument, default to 8091 if not provided
 set PORT=%1
-if "%PORT%"=="" set PORT=8089
+if "%PORT%"=="" set PORT=8091
 
 REM Set the ngrok URL
-set NGROK_URL=30e1b7c2cc18-7054659292749497477.ngrok-free.app
+set NGROK_URL=cross-manhood-moody.ngrok-free.dev
 
 REM Check if ngrok is already running
 tasklist /FI "IMAGENAME eq ngrok.exe" 2>NUL | find /I /N "ngrok.exe">NUL
@@ -30,6 +30,6 @@ echo Starting ngrok... Press Ctrl+C to stop.
 echo.
 
 REM Run ngrok (this will run continuously until stopped)
-REM Use --domain flag for ngrok v3+ (correct syntax: ngrok http PORT --domain=DOMAIN)
-ngrok http %PORT% --domain=%NGROK_URL%
+REM Use --url flag with --pooling-enabled to connect to the online endpoint
+ngrok http %PORT% --url=https://%NGROK_URL% --pooling-enabled
 
